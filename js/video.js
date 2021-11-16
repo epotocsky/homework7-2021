@@ -29,11 +29,12 @@ document.querySelector("#faster").addEventListener("click", function() {
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
-	if (video.currentTime + 15 > video.duration) {
-		video.currentTime = 0
+	console.log("Skip Ahead");
+	if (video.currentTime < video.duration - 15){
+		video.currentTime += 15;	
 	}
-	else {
-		video.currentTime += 15
+	else{
+		video.currentTime = 0;
 	}
 	console.log("Current video time is: " + video.currentTime);
 	video.play();
